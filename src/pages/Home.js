@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Hero from '../components/Hero';
-import Features from '../components/Features';
+import Features from '../components/Features.js';
 import Contact from '../components/Contact';
 import Form from '../components/Form';
 import Footer from '../components/Footer';
