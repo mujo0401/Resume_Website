@@ -215,4 +215,31 @@ body {
   .back-btn:hover {
     background-color: #0056b3; /* Darker light blue */
   }
+
+  nav {
+    background-color: #333;
+    padding: 1em;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 1em;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  
   
