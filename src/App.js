@@ -9,7 +9,8 @@ import './App.css';
 
 function App() {
   return (
-    <Router basename="/Resume_Website">
+    <Router>
+     <Navigation /> 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
