@@ -1,41 +1,30 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import emailjs from 'emailjs-com';
 
 const Form = () => {
+  const form = useRef();
+
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_uwrcc7s', 'template_80c98wl', e.target, 'XpcGHz4MTS6Q2kJOP')
+    emailjs.sendForm('service_uwrcc7s', 'template_80c98wl', form.current, 'XpcGHz4MTS6Q2kJOP')
       .then((result) => {
-        console.log(result.text);
-        alert('Email sent successfully!');
+          console.log(result.text);
       }, (error) => {
-        console.log(error.text);
-        alert('Failed to send email. Please try again.');
+          console.log(error.text);
       });
-
-    e.target.reset();
   };
 
   return (
-    <div className="contact-form">
-      <h2>Contact Me</h2>
-      <form onSubmit={sendEmail}>
-        <div>
-          <label htmlFor="name">Name</label>
-          <input type="text" id="name" name="name" required />
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div>
-          <label htmlFor="message">Message</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-        <button type="submit">Send</button>
-      </form>
-    </div>
+    <form ref={form} onSubmit={sendEmail}>
+      <label>Name</label>
+      <input type="text" name="user_name" required />
+      <label>Email</label>
+      <input type="email" name="user_email" required />
+      <label>Message</label>
+      <textarea name="message" required />
+      <input type="submit" value="Send" />
+    </form>
   );
 };
 
