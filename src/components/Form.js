@@ -5,7 +5,7 @@ const Form = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_uwrcc7s', 'template_e8llbja', e.target, 'XpcGHz4MTS6Q2kJOP')
+    emailjs.sendForm('service_uwrcc7s', 'template_80c98wl', e.target, 'XpcGHz4MTS6Q2kJOP')
       .then((result) => {
         console.log(result.text);
         alert('Email sent successfully!');
